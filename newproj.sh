@@ -34,11 +34,15 @@ echo "Start docker and launching devilbox image."
 if [ "$docker_down" == "1" ] && [ "$sudo_active" == "1" ] ;
 then
     sudo systemctl start docker
+    docker_down=0
+else
+    echo "Error: Can't start docker."
+fi
+if [ "$docker_down == "0" ] ;
+then
     cd $devilbox_path
     ./start.sh
     #go back home
     cd $curr_dir
-else
-    echo "Error: Can't start docker."
 fi
 echo "Complete."
