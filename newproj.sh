@@ -1,7 +1,7 @@
 #!/bin/bash
 #set variables
-project_path=/home/cgrd/code/projects
-devilbox_path=/home/cgrd/code/devilbox
+project_path=~/code/projects
+devilbox_path=~/code/devilbox
 docker_down=$(systemctl show --property ActiveState docker | grep -c inactive)
 curr_dir=$(pwd)
 if sudo -nv 2>/dev/null && sudo -v ; then
